@@ -10,12 +10,6 @@ branches:
   - /^release\//
 
 script:
-- git checkout $(
-    git branch --contains HEAD
-        | cut -c3-
-        | grep -E '^(master$|release)'
-        | head -1
-  )
 - GIT_COMMITTER_NAME=Bob
   GIT_COMMITTER_EMAIL=bob@blob.net
   GIT_AUTHOR_NAME='Bob Blob'
