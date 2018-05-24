@@ -4,12 +4,9 @@ sudo: false
 # Want 'bash' but 'c' works:
 language: c
 
-branches:
-  only:
-  - master
-  - /^release\//
-
 script:
+# NOTE: we have to make sure we're on a branch (rather than on a detached HEAD) because tests rely on it.
+- git checkout -b travis-ci-dummy-branch-name
 - GIT_COMMITTER_NAME=Bob
   GIT_COMMITTER_EMAIL=bob@blob.net
   GIT_AUTHOR_NAME='Bob Blob'
